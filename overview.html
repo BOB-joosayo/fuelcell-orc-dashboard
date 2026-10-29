@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>연료전지 폐열 ORC 발전 현황</title>
+  <link rel="stylesheet" href="assets/orc-viz.css?v=20261029d">
+  <style>html, body { margin: 0; background: #000; }</style>
+</head>
+<body>
+  <div class="orc-viz">
+    <div class="page-head">
+      <h1>연료전지 폐열 ORC 발전 현황</h1>
+      <span class="sub">수소연료전지 폐열 → ORC 6대 → 계통</span>
+      <span class="spacer"></span>
+      <div id="demo"></div>
+      <span class="recv"><span class="dot"></span><span id="recv">최근 수신 —</span></span>
+    </div>
+    <div id="nav"></div>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="card diagram">
+      <svg id="ov-svg" viewBox="0 0 1560 830" role="img" aria-label="ORC 전체 구성도"></svg>
+      <div class="legend">
+        <span><i style="background:#ff5722;height:6px"></i>중온수 공급</span>
+        <span><i style="background:#ffc145"></i>중온수 환수</span>
+        <span><i style="background:#4dabf7"></i>냉각수 공급</span>
+        <span><i style="background:#20c997"></i>냉각수 환수</span>
+        <span><i style="background:linear-gradient(90deg,rgba(151,117,250,.2),#d0bfff 80%,#fff);height:3px;box-shadow:0 0 6px #9775fa"></i>전력</span>
+        <span style="margin-left:12px"><i class="dot" style="background:#2fbf71"></i>운전 중</span>
+        <span><i class="dot" style="background:#4dabf7"></i>기동 중</span>
+        <span><i class="dot" style="background:#f59f00"></i>정지 중</span>
+        <span><i class="dot" style="background:#6b6b73"></i>정지</span>
+        <span><i class="dot" style="background:#ff4d4f"></i>고장</span>
+        <span><i class="dot" style="background:repeating-linear-gradient(45deg,#3a3a40 0 2px,#141417 2px 4px);border:1px solid #555"></i>통신 없음</span>
+      </div>
+    </div>
+
+    <div id="alarm"></div>
+    <div id="points"></div>
+  </div>
+
+  <script src="data/point-map.js?v=20261029d"></script>
+  <script src="data/mock-scenarios.js?v=20261029d"></script>
+  <script src="assets/orc-viz.js?v=20261029d"></script>
+  <script src="assets/overview.js?v=20261029d"></script>
+</body>
+</html>

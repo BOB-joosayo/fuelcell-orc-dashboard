@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>열량 검증 · 연료전지 폐열 ORC</title>
+  <link rel="stylesheet" href="assets/orc-viz.css?v=20261029d">
+  <style>html, body { margin: 0; background: #000; }</style>
+</head>
+<body>
+  <div class="orc-viz">
+    <div class="page-head">
+      <h1>열량 검증</h1>
+      <span class="sub">현장 수신값 vs EMS 계산값</span>
+      <span class="spacer"></span>
+      <div id="demo"></div>
+      <span class="recv"><span class="dot"></span><span id="recv">최근 수신 —</span></span>
+    </div>
+    <div id="nav"></div>
+
+    <div class="explain">
+      <div class="card">
+        <h3><span class="chip site">현장</span> 현장 PLC 수신값</h3>
+        · 15분 열량 = 열량 적산값의 15분 차이
+      </div>
+      <div class="card">
+        <h3><span class="chip ems">EMS</span> 온도·유량으로 계산한 값</h3>
+        · 15분 열량 = (공급 − 환수 온도) × 유량 × 0.25h × 밀도 × 비열 ÷ 4.1868
+      </div>
+    </div>
+
+    <div class="sec-title">① 열량 · 최근 15분</div>
+    <div class="heat-cards" id="heat-cards"></div>
+
+    <div class="sec-title">② 기간별 비교</div>
+    <div class="card trend">
+      <div class="toolbar" id="tr-bar">
+        <div class="seg" data-g="unit"><button data-v="00" class="on">통합</button><button data-v="01">#1</button><button data-v="02">#2</button></div>
+        <div class="seg" data-g="period"><button data-v="day" class="on">일별</button><button data-v="month">월별</button><button data-v="year">연별</button></div>
+        <span class="spacer"></span>
+        <div class="date-nav">
+          <button type="button" data-nav="-1">‹</button>
+          <span class="date-box" id="tr-date">—</span>
+          <button type="button" data-nav="1">›</button>
+          <button type="button" class="today" data-nav="today">오늘</button>
+        </div>
+      </div>
+      <div class="trend-shell">
+        <div class="trend-main">
+          <svg id="chart" viewBox="0 0 1160 330" role="img" aria-label="기간별 비교"></svg>
+          <div class="legend" id="tr-legend"></div>
+        </div>
+        <aside class="trend-side" id="tr-side"></aside>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/point-map.js?v=20261029d"></script>
+  <script src="data/mock-scenarios.js?v=20261029d"></script>
+  <script src="assets/orc-viz.js?v=20261029d"></script>
+  <script src="assets/verify.js?v=20261029d"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ORC 상세 · 연료전지 폐열 ORC</title>
+  <link rel="stylesheet" href="assets/orc-viz.css?v=20261029d">
+  <style>html, body { margin: 0; background: #000; }
+    .orc-viz .state-pill { font-size: 12px; font-weight: 700; color: #fff; border-radius: 12px; padding: 3px 12px; background: #4a4a52; }</style>
+</head>
+<body>
+  <div class="orc-viz">
+    <div class="page-head">
+      <h1 id="title">ORC 상세</h1>
+      <span class="state-pill" id="state-pill">—</span>
+      <span class="sub" id="sub"></span>
+      <span class="spacer"></span>
+      <div id="demo"></div>
+      <span class="recv"><span class="dot"></span><span id="recv">최근 수신 —</span></span>
+    </div>
+    <div id="nav"></div>
+    <div class="unit-tabs" id="tabs" style="margin-bottom:14px"></div>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="card diagram">
+      <svg id="dt-svg" viewBox="0 0 1560 600" role="img" aria-label="ORC 1대 흐름도"></svg>
+      <div class="legend">
+        <span><i style="background:#ff5722;height:6px"></i>중온수 입구</span>
+        <span><i style="background:#ffc145"></i>중온수 출구</span>
+        <span><i style="background:#e64980;height:7px"></i>고압 증기</span>
+        <span><i style="background:#fcc2d7;height:3px"></i>저압 증기</span>
+        <span><i style="background:#5c7cfa"></i>액체 냉매</span>
+        <span><i style="background:#4dabf7"></i>냉각수 공급</span>
+        <span><i style="background:#20c997"></i>냉각수 환수</span>
+      </div>
+    </div>
+
+    <div id="alarm"></div>
+  </div>
+
+  <script src="data/point-map.js?v=20261029d"></script>
+  <script src="data/mock-scenarios.js?v=20261029d"></script>
+  <script src="assets/orc-viz.js?v=20261029d"></script>
+  <script src="assets/orc-detail.js?v=20261029d"></script>
+</body>
+</html>
